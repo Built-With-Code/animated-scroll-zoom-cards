@@ -29,14 +29,15 @@ const Card = ({ imgUrl }: { imgUrl: string }) => {
 
   // Scroll tracking
   scrollY.on("change", (scrollY) => {
-    let scaleValue = 1;
+    // animationValue indicates progress after container hits sticky point, going from 1 to 0
+    let animationValue = 1;
     if (scrollY > maxScrollY) {
-      scaleValue = Math.max(0, 1 - (scrollY - maxScrollY) / 10000);
+      animationValue = Math.max(0, 1 - (scrollY - maxScrollY) / 10000);
     }
 
     setDynamicStyles({
-      scale: scaleValue,
-      filter: (1 - scaleValue) * 100,
+      scale: animationValue,
+      filter: (1 - animationValue) * 100,
     });
   });
 
