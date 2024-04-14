@@ -62,7 +62,7 @@ const Card = ({ imgUrl }: { imgUrl: string }) => {
         src={imgUrl}
         alt={imgUrl}
         fill
-        className="object-fit"
+        className="object-cover"
         sizes="90vw"
       />
     </motion.div>
